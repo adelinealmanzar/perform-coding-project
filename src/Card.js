@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const CardDiv = styled.div`
@@ -41,12 +41,25 @@ const TempoDiv = styled(TextDiv)`
   font-weight: bold;
 `
 
-// TODO: fix prop implementation in styled components
-// background-image: url(${props => props.track.albumArtUrl});
-
 function Card({ track }) {
+  const [ isPlaying, setIsPlaying ] = useState(false)
+  const [ audio ] = useState(new Audio(track.previewUrl))
+
+  function playPause() {
+    if (isPlaying) {
+      audio.pause()
+    } else {
+      audio.play()
+    }
+
+    setIsPlaying(isPlaying => !isPlaying)
+  }
+
   return (
-    <CardDiv style={{backgroundImage: `url(${track.albumArtUrl})`}}>
+    <CardDiv
+      style={{backgroundImage: `url(${track.albumArtUrl})`}}
+      onClick={playPause}
+    >
         <InfoDiv>
             <TextDiv>
               <TrackDiv>{track.name}</TrackDiv>
