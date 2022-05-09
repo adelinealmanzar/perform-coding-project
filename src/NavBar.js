@@ -13,14 +13,6 @@ const StyledNav = styled.nav`
     flex-flow: row nowrap;
     justify-content: space-between;
 `
-const StyledA = styled.a`
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    // width: 130px;
-    border-radius: 40px;
-`
 const LogoImg = styled.img`
     height: 70px;
     width: 220px;
@@ -29,6 +21,17 @@ const DownloadsDiv = styled.div`
     padding: 15px;
     display: flex;
     flex-direction: row;
+`
+const StyledA = styled.a`
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    // width: 130px;
+    border-radius: 40px;
+    &:hover {
+        opacity: 70%;
+    }
 `
 const SpotifyA = styled(StyledA)`
     background: #1ed761;
