@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import CardsContainer from './CardsContainer';
+import NavBar from './NavBar';
 
 const AppDiv = styled.div`
   background-color: #FFFFFC;
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <AppDiv>
+      <NavBar />
       <CardsContainer tracks={tracks}/>
     </AppDiv>
   );
