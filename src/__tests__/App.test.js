@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import NavBar from '../components/NavBar'
+import App from '../components/App'
 
-test('renders navigation bar without crashing', () => {
-  render(<NavBar />)
-  expect(screen.getByText('Spotify')).toBeInTheDocument()
+test('renders app without crashing', () => {
+  render(<App />)
+  expect(screen.getByAltText('marketing-image')).toBeInTheDocument()
 })
