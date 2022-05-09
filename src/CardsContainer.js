@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Card from './Card'
 
-const StyledDiv = styled.div`
+const CardsContainerDiv = styled.div`
   width: 100%;
   height: 100vh;
   background: #FFFFFC;
@@ -14,9 +14,9 @@ const StyledDiv = styled.div`
 
 function CardsContainer({ tracks }) {
   return (
-    <StyledDiv>
+    <CardsContainerDiv>
         {tracks?.map(track => <Card key={track.id} track={track} />)}
-    </StyledDiv>
+    </CardsContainerDiv>
   )
 }
 

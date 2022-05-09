@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledCardDiv = styled.div`
+const CardDiv = styled.div`
   margin:10px;
   background: #fff;
   height: 200px;
@@ -12,31 +12,49 @@ const StyledCardDiv = styled.div`
   display: flex;
   align-items: flex-end;
 `
-
-const StyledInfoDiv = styled.div`
-    background-color: #fffffc;
-    height: 30%;
-    width: 100%;
-    opacity: 80%;
-    border-radius: 0px 0px 40px 40px;
-    display: flex;
-    flex-flow: column wrap;
-    // align-content: stretch;
+const InfoDiv = styled.div`
+  background-color: #fffffc;
+  height: 30%;
+  width: 100%;
+  opacity: 80%;
+  border-radius: 0px 0px 40px 40px;
+  display: flex;
+  justify-content: space-between;
+`
+const TextDiv = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+`
+const TrackDiv = styled.div`
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 4px;
+`
+const ArtistDiv = styled.div`
+  font-weight: normal;
+  font-size: 12px;
+  padding-left: 15px;
+`
+const TempoDiv = styled(TextDiv)`
+  font-size: 30px;
+  padding-right: 5px;
+  font-weight: bold;
 `
 
 // TODO: fix prop implementation in styled components
-// background-image: url(${({ track }) => track.albumArtUrl});
+// background-image: url(${props => props.track.albumArtUrl});
 
 function Card({ track }) {
-
   return (
-    <StyledCardDiv style={{backgroundImage: `url(${track.albumArtUrl})`}}>
-        <StyledInfoDiv>
-            <div style={{fontSize: '13px', fontWeight: 'bold', paddingLeft: '5px'}}>{track.name}</div>
-            <div style={{fontSize: '11px', paddingLeft: '5px'}}>{track.mainArtist}</div>
-            <div style={{fontSize: '10px', fontWeight: 'bold', paddingLeft: '5px'}}>{Math.round(track.songTempo)}</div>
-        </StyledInfoDiv>
-    </StyledCardDiv>
+    <CardDiv style={{backgroundImage: `url(${track.albumArtUrl})`}}>
+        <InfoDiv>
+            <TextDiv>
+              <TrackDiv>{track.name}</TrackDiv>
+              <ArtistDiv>{track.mainArtist}</ArtistDiv>
+            </TextDiv>
+            <TempoDiv>{Math.round(track.songTempo)}</TempoDiv>
+        </InfoDiv>
+    </CardDiv>
   )
 }
 

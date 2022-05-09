@@ -1,7 +1,13 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 import CardsContainer from './CardsContainer';
+
+const AppDiv = styled.div`
+  background-color: #FFFFFC;
+  height: 100vh;
+  font-family: Poppins,Helvetica Neue,Arial,Helvetica,sans-serif;
+`
 
 function App() {
   const [ tracks, setTracks ] = useState(null)
@@ -14,7 +20,9 @@ function App() {
   }, [])
 
   return (
-    <CardsContainer tracks={tracks}/>
+    <AppDiv>
+      <CardsContainer tracks={tracks}/>
+    </AppDiv>
   );
 }
 
