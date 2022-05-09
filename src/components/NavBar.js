@@ -45,8 +45,7 @@ const AppleA = styled(StyledA)`
     padding: 10px;
 `
 
-function NavBar() {
-    const downloadHref = "https://apps.apple.com/us/app/perform-music-for-workouts/id1565615765"
+function NavBar({ downloadHref }) {
     const homeHref = "https://perform.fm/home/"
     const logoSrc = "https://i.ibb.co/ncnyCGX/Screen-Shot-2022-05-09-at-11-02-16-AM.png"
   
