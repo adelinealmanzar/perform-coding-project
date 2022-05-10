@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import marketingImg from '../assets/download.gif'
 
 import CardsContainer from './CardsContainer';
+import MarketingContainer from './MarketingContainer';
 import NavBar from './NavBar';
 
 const AppDiv = styled.div`
   background-color: #FFFFFC;
   height: 100vh;
   font-family: Poppins,Helvetica Neue,Arial,Helvetica,sans-serif;
-`
-
-const MarketingImg = styled.img`
-  width: 100%;
-  height: 400px;
 `
 
 function App() {
@@ -25,15 +20,13 @@ function App() {
     fetch('https://api.perform.fm/api/playlists/Z5BJ')
     .then(r => r.json())
     .then(data => setTracks(data.tracks))
-    .catch(error => console.log('TODO', error))
+    .catch(error => console.log(error.message))
   }, [])
 
   return (
     <AppDiv>
       <NavBar downloadHref={downloadHref}/>
-      <a href={downloadHref}>
-        <MarketingImg src={marketingImg} alt="marketing-image"></MarketingImg>
-      </a>
+      <MarketingContainer downloadHref={downloadHref}/>
       <CardsContainer tracks={tracks}/>
     </AppDiv>
   );

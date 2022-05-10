@@ -60,13 +60,13 @@ function Card({ track }) {
       style={{backgroundImage: `url(${track.albumArtUrl})`}}
       onClick={playPause}
     >
-        <InfoDiv>
-            <TextDiv>
-              <TrackDiv>{track.name}</TrackDiv>
-              <ArtistDiv>{track.mainArtist}</ArtistDiv>
-            </TextDiv>
-            <TempoDiv>{Math.round(track.songTempo)}</TempoDiv>
-        </InfoDiv>
+      <InfoDiv>
+          <TextDiv>
+            <TrackDiv>{track.name}</TrackDiv>
+            <ArtistDiv>{track.mainArtist}</ArtistDiv>
+          </TextDiv>
+          <TempoDiv>{Math.round(track.songTempo)}</TempoDiv>
+      </InfoDiv>
     </CardDiv>
   )
 }
